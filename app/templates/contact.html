@@ -1,0 +1,169 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block body %}
+
+
+
+    <!-- ========================= 
+            Google Map
+    =========================  -->
+    <section class="google-map py-0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424191.9856422624!2d-6.107795712782876!3d33.83811352674205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda05b3fe5006c25%3A0xc6779fefa472e711!2sHealth%20Service%20Lalla%20Aicha!5e0!3m2!1sfr!2sus!4v1626886987800!5m2!1sfr!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </section><!-- /.GoogleMap -->
+  
+      <!-- ==========================
+          contact layout 1
+      =========================== -->
+      <section class="contact-layout1 pt-0 mt--100">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="contact-panel d-flex flex-wrap">
+                <form class="contact-panel__form" method="post" action="http://7oroof.com/demos/medcity/assets/php/contact.php" id="contactForm">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="contact-panel__title">Prendre Rendz-Vous !</h4>
+                        <p class="contact-panel__desc mb-30">Nous Serons Ravi De Vous Servir
+                        </p>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="form-group">
+                          <i class="icon-widget form-group-icon"></i>
+                          <select class="form-control">
+                            <option value="0">Services</option>
+                            <option value="1">Hijama</option>
+                            <option value="2">Massage</option>
+                            <option value="2">Autre</option>
+                          </select>
+                        </div>
+                      </div><!-- /.col-lg-6 -->
+                      <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="form-group">
+                          <i class="icon-user form-group-icon"></i>
+                          <select class="form-control">
+                            <option value="0">Genre</option>
+                            <option value="1">Homme</option>
+                            <option value="2">Femme</option>
+                          </select>
+                        </div>
+                      </div><!-- /.col-lg-6 -->
+                      <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="form-group">
+                          <i class="icon-user form-group-icon"></i>
+                          <input type="number" class="form-control" placeholder="Age" id="contact-name" name="Age"
+                          required>
+                        </div>
+                      </div><!-- /.col-lg-6 -->
+                      <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          <i class="icon-news form-group-icon"></i>
+                          <input type="text" class="form-control" placeholder="Nom Complet" id="contact-name" name="contact-name"
+                            required>
+                        </div>
+                      </div><!-- /.col-lg-6 -->
+                      <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="form-group">
+                          <i class="icon-email form-group-icon"></i>
+                          <input type="email" class="form-control" placeholder="Email" id="contact-email"
+                            name="contact-email" required>
+                        </div>
+                      </div><!-- /.col-lg-6 -->
+                      <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="form-group">
+                          <i class="icon-phone form-group-icon"></i>
+                          <input type="text" class="form-control" placeholder="Numero Telephone" id="contact-Phone"
+                            name="contact-phone" required>
+                        </div>
+                      </div><!-- /.col-lg-4 -->
+                      <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="form-group form-group-date">
+                          <i class="icon-calendar form-group-icon"></i>
+                          <input type="date" class="form-control" id="contact-date" name="contact-date" required>
+                        </div>
+                      </div><!-- /.col-lg-4 -->
+                      <div class="col-sm-4 col-md-4 col-lg-4">
+                        <div class="form-group form-group-date">
+                          <i class="icon-clock form-group-icon"></i>
+                          <input type="time" class="form-control" id="contact-time" name="contact-time" required>
+                        </div>
+                      </div><!-- /.col-lg-4 -->
+                    <div class="col-12">
+                      <div class="form-group">
+                        <i class="icon-alert form-group-icon"></i>
+                        <textarea class="form-control" placeholder="Message" id="contact-message"
+                          name="contact-message"></textarea>
+                      </div>
+                      <button type="submit" class="btn btn__secondary btn__rounded btn__block btn__xhight mt-10">
+                        <span>Envoyer</span> <i class="icon-arrow-right"></i>
+                      </button>
+                      <div class="contact-result"></div>
+                    </div><!-- /.col-lg-12 -->
+                  </div><!-- /.row -->
+                </form>
+                <div
+                  class="contact-panel__info d-flex flex-column justify-content-between bg-overlay bg-overlay-primary-gradient">
+                  <div class="bg-img"><img src="assets/images/banners/1.jpg" alt="banner"></div>
+                  <div>
+                    <h4 class="contact-panel__title color-white">Nous Contactez</h4>
+                    <p class="contact-panel__desc font-weight-bold color-white mb-30">Health Service Lalla Aicha, est un centre de bien être assiste par une kinésithérapeute, centre spécialisé en Hijama , amincissement, massage relaxant et thérapeutique par des appareils spécialisé
+                    </p>
+                  </div>
+                  <div>
+                    <ul class="contact__list list-unstyled mb-30">
+                      <li>
+                        <i class="icon-phone"></i><a href="#">Fix : 05.32.01.72.86</a>
+                      </li>
+                      <li>
+                        <i class="icon-location"></i><a href="#">Adresse : 18 lotissement Ikhlasse lamssala, Meknes</a>
+                      </li>
+                      <li>
+                        <i class="icon-clock"></i><a href="contact-us.html">Lun - Jeudi 09:30 - 20:00 | Ven Fermée</a>
+                      </li>
+                    </ul>
+                    <a href="#" class="btn btn__white btn__rounded btn__outlined">Nous Contactez</a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.contact layout 1 -->
+  
+
+      <!-- ========================
+       gallery
+      =========================== -->
+      <section class="gallery pt-0 pb-90">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="slick-carousel"
+                data-slick='{"slidesToShow": 4, "slidesToScroll": 1, "autoplay": true, "arrows": true, "dots": false, "responsive": [ {"breakpoint": 992, "settings": {"slidesToShow": 2}}, {"breakpoint": 767, "settings": {"slidesToShow": 2}}, {"breakpoint": 480, "settings": {"slidesToShow": 1}}]}'>
+                <a class="popup-gallery-item" href="assets/images/gallery/1.jpg">
+                  <img src="assets/images/gallery/1.jpg" alt="gallery img">
+                </a>
+                <a class="popup-gallery-item" href="assets/images/gallery/2.jpg">
+                  <img src="assets/images/gallery/2.jpg" alt="gallery img">
+                </a>
+                <a class="popup-gallery-item" href="assets/images/gallery/3.jpg">
+                  <img src="assets/images/gallery/3.jpg" alt="gallery img">
+                </a>
+                <a class="popup-gallery-item" href="assets/images/gallery/4.jpg">
+                  <img src="assets/images/gallery/4.jpg" alt="gallery img">
+                </a>
+                <a class="popup-gallery-item" href="assets/images/gallery/5.jpg">
+                  <img src="assets/images/gallery/5.jpg" alt="gallery img">
+                </a>
+                <a class="popup-gallery-item" href="assets/images/gallery/6.jpg">
+                  <img src="assets/images/gallery/6.jpg" alt="gallery img">
+                </a>
+              </div><!-- /.gallery-images-wrapper -->
+            </div><!-- /.col-xl-5 -->
+          </div><!-- /.row -->
+        </div><!-- /.container -->
+      </section><!-- /.gallery 2 -->
+
+
+{% endblock body %}
