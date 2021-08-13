@@ -19,3 +19,18 @@ class Image(models.Model):
 
     def __str__(self):
         return str(self.alter)
+
+
+class Rdv(models.Model):
+
+    nom = models.CharField(max_length=9000)
+    email = models.EmailField(blank=True, null=True)
+    tele = models.CharField(max_length=900)
+    date = models.CharField(max_length=9000)
+    heure = models.CharField(max_length=9000)
+    genre = models.CharField(max_length=600)
+    service = models.CharField(max_length=9000)
+    age = models.CharField(max_length=800)
+
+    def __str__(self) -> str:
+        return str(self.nom) + " | - | " + str(self.pk)
