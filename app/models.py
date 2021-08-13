@@ -32,5 +32,15 @@ class Rdv(models.Model):
     service = models.CharField(max_length=9000)
     age = models.CharField(max_length=800)
 
-    def __str__(self) -> str:
+    def __str__(self):
         return str(self.nom) + " | - | " + str(self.pk)
+
+class Blog(models.Model):
+
+    image = models.ImageField(upload_to='blog_image', default='blog_image/healt.jpg')
+    date = models.DateField(auto_now=True)
+    titre = models.CharField(max_length=1000)
+    paragraphe = models.TextField(max_length=9999)
+
+    def __str__(self):
+        return str(self.titre)

@@ -1,4 +1,4 @@
-from app.models import Image, Rdv
+from app.models import Blog, Image, Rdv
 from app.forms import senderSms
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
@@ -113,6 +113,26 @@ def dashboard(request):
     }
 
     return render(request, 'admin/portail.html', context)
+
+@login_required
+def blog(request):
+
+    article = Blog.objects.all()
+
+    context = {
+        'blog': article
+    }
+
+    return render(request, 'admin/blog.html', context)
+
+@login_required
+def blogForm(request):
+    
+    context = {
+
+    }
+
+    return render(request, 'admin/addblog.html', context)
 
 def logoutPage(request):
     
