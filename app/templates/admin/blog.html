@@ -1,0 +1,37 @@
+{% extends 'admin/main.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- wrapper starts -->
+    <div class="wrapper">
+        <div class="content shadow-sm">
+            <div class="container main-container" id="main-container">
+
+                <a href="{% url 'app:addblog' %}" class="mb-2 btn btn-lg btn-warning"><i class="material-icons">add</i> Ajouter Article</a>
+
+                <div class="row">
+                    {% for p in blog %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card border-0 shadow-sm mb-4 mt-4 overflow-hidden">
+                            <div class="card-img-top">
+                               <img src="{{p.image.url}}" alt="">
+                            </div>
+                            <div class="card-body">
+                                <h6 class="template-inverse">{{p.titre}}</h6>
+                                <p class="text-template-primary-light">Postez Au : {{p.date}}</p>
+                                <p class="text-template-primary-light">{{ p.paragraphe|truncatewords:30 }} <a href="blog-details.html">Voir Plus...</a></p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="mb-2 mr-2 btn-rounded-circle shadow btn btn-danger"><i class="material-icons">delete</i></a>
+                                <a href="#" class="mb-2 mr-2 btn-rounded-circle shadow btn btn-warning"><i class="material-icons">create</i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+</div>
+</div>
+{% endblock body %}

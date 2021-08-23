@@ -25,7 +25,7 @@ SECRET_KEY = '4a41$qrt)zkjmb9m#w7q+%rn1-&x-c0&94$4z3ahdgm18a3pu1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hijamaty.com', 'www.hijamaty.com', 'localhost', '192.168.1.140']
+ALLOWED_HOSTS = ['localhost', 'hijamaty.com', 'www.hijamaty.com']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'bootstrap4',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +76,7 @@ WSGI_APPLICATION = 'h_s.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-"""
+
 
 
 DATABASES = {
@@ -98,7 +100,7 @@ DATABASES = {
     }
 }
 
-
+"""
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -127,18 +129,29 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
+
+DATE_FORMAT = "d / M / Y"
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+"""
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+
+
+
 """
 
 STATIC_URL = '/static/'
@@ -146,5 +159,14 @@ STATIC_ROOT = '/home/hijagvir/hijamaty.com/static/'
 STATICFILES_DIRS = (
     '/home/hijagvir/hijamaty.com/static/',
 )
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
-"""
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.hijamaty.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 456
+EMAIL_HOST_USER = 'contact@hijamaty.com'
+EMAIL_HOST_PASSWORD = 'INTwewe@2020'
+RECIPIENT_ADDRESS= 'fall.laml2542@gmail.com'

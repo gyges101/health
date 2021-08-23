@@ -4324,8 +4324,8 @@ input[type=radio] {
   position: fixed;
   right: 20px;
   bottom: 30px;
-  width: 150px;
-  height: 150px;
+  width: 50px;
+  height: 50px;
   opacity: 0;
   z-index: 1000;
   font-size: 48px;
