@@ -12,7 +12,7 @@ urlpatterns = [
     path('send', sender, name='send'),
     path('dashboard', dashboard, name='dashboard'),
     path('blog', blog, name='blog'),
-    path('addblog', blogForm, name='addblog'),
+    path('addblog', blogFormer, name='addblog'),
     path('login', login, name='login'),
     path('logout', logoutPage, name='logout'),
 ]

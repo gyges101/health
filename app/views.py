@@ -1,64 +1,25 @@
 from app.models import Blog, Image, Rdv
-from app.forms import senderSms
+from app.forms import senderSms, blogForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login as dj_login, authenticate, logout
-import telnyx
-
-telnyx.api_key = "KEY017B187CE2B994C15ADF807ADF06BFD9_R4zGkrl9p3r9HiADH4IFDh"
-
-your_telnyx_number = "+13125300760"
-destination_number = "+212777338028"
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 # Create your views here.
 
 def home(request):
-
-    if request.method == 'POST':
-
-        send = senderSms(request.POST)
-
-        if send.is_valid():
-
-            send.save()
-            i =  Rdv.objects.get('-id')
-            telnyx.Message.create(from_=your_telnyx_number,to=destination_number,text="Rendez Vous Resver Le {} A {} | Client {} | Service {} | Genre {} | Tel {} | Email {}".format(i.date, i.heure, i.nom, i.service, i.genre, i.tele, i.email),)
-            redirect('/')
-                
-
-
-
-    else:
-        send = senderSms()
-
-
+    
+    send_mail(subject='A cool subject',message='A stunning message',from_email=settings.EMAIL_HOST_USER,recipient_list=[settings.RECIPIENT_ADDRESS])
 
     context = {
-        'form': send
     }
 
     return render(request, 'home.html', context)
 
 
 def sender(request):
-
-    if request.method == 'POST':
-
-        send = senderSms(request.POST)
-
-        if send.is_valid():
-
-            send.save()
-            i =  Rdv.objects.get('-id')
-            telnyx.Message.create(from_=your_telnyx_number,to=destination_number,text="Rendez Vous Resver Le {} A {} | Client {} | Service {} | Genre {} | Tel {} | Email {}".format(i.date, i.heure, i.nom, i.service, i.genre, i.tele, i.email),)
-            redirect('/')
-                
-
-
-
-    else:
-        send = senderSms()
 
 
     return redirect('/')
@@ -126,10 +87,16 @@ def blog(request):
     return render(request, 'admin/blog.html', context)
 
 @login_required
-def blogForm(request):
-    
+def blogFormer(request):
+    if request.method == 'POST':
+        form = blogForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            form.save()
+    else:
+        form = blogForm()
+        
     context = {
-
+        'form': form
     }
 
     return render(request, 'admin/addblog.html', context)

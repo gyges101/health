@@ -40,7 +40,7 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='blog_image', default='blog_image/healt.jpg')
     date = models.DateField(auto_now=True)
     titre = models.CharField(max_length=1000)
-    paragraphe = models.TextField(max_length=9999)
+    paragraphe = models.CharField(max_length=9999)
 
     def __str__(self):
         return str(self.titre)
